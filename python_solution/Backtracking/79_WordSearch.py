@@ -10,25 +10,19 @@ class Solution(object):
         m = len(board)
         n = len(board[0])
 
-        # print('m:', m)
-        # print('n:', n)
-        
         def dfs(index, x, y, path):
             """
+            if word[index:] could be constructed, return True, otherwise
+            return False.
+
             :type index: int
             :type x: int
             :type y: int
-            :rtype void
+            :rtype: bool
             """
             if index >= length-1:
-                self.result = True
-                # print('path:', path)
-                # print('index:', index)
-                return
+                return True
             
-            # DEBUG
-            # if index > 0: print('path:', path)
-
             xx = [1, -1, 0,  0]
             yy = [0,  0, 1, -1]
             for i in range(4):
@@ -37,23 +31,17 @@ class Solution(object):
                 if 0 <= new_x < n and 0 <= new_y < m and board[new_y][new_x] == word[index+1]:
                     tmp = board[new_y][new_x]
                     board[new_y][new_x] = '#'
-
-                    # print('-'*20)
-                    # print('new_x:', new_x)
-                    # print('new_y:', new_y)
-                    # print('-'*20)
-
-                    dfs(index+1, new_x, new_y, path+[(new_x, new_y)])
+                    if dfs(index+1, new_x, new_y, path+[(new_x, new_y)]): return True
                     board[new_y][new_x] = tmp
+            return False
                     
         for i in range(m):
             for j in range(n):
                 if board[i][j] == word[0]: 
-                    tmp = board[i][j]
                     board[i][j] = '#'
-                    dfs(0, j, i, [(j, i)])
-                    board[i][j] = tmp
-        return self.result
+                    if dfs(0, j, i, [(j, i)]): return True
+                    board[i][j] = word[0]
+        return False
                     
 
 a = Solution()
