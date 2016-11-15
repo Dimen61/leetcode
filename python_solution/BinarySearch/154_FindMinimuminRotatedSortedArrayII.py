@@ -4,30 +4,20 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if len(nums) == 1: return nums[0]
-        elif not nums: return 0
-        elif nums[0] < nums[-1]: return nums[0]
-        
-        left, right = 1, len(nums) - 1
-        # mid = (left + right) // 2
+        left, right = 0, len(nums)-1
         while left < right:
-            mid = (left + right) // 2
+            if nums[left] < nums[right]:
+                return nums[left]
 
-            print('left: {0}; right: {1}; mid: {2}'.format(left, right, mid))
-
-            if nums[mid] == nums[0]:
-                if nums[-1] < nums[0]:
-                    left = mid + 1
-                else:
-                    right = mid - 1
-            elif nums[mid] > nums[0]:
+            mid = left + (right-left) // 2
+            if nums[mid] > nums[left]:
                 left = mid + 1
-            elif nums[mid] >= nums[mid-1]:
-                right = mid -1
-            else:
-                left = mid
-                break
-        return min(nums[left], nums[0])
+            elif nums[mid] < nums[left]:
+                right = mid
+            else:  # nums[mid] == nums[left]            
+                left += 1
+        return nums[left]
+
 
 a = Solution()
 # print(a.findMin([2, 4, 5, 6, 7, 2, 2, 2, 2]))
