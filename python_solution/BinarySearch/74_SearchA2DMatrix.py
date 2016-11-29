@@ -28,3 +28,46 @@ class Solution(object):
                 right = mid
                 
         return matrix[line_num][left] == target
+
+
+    def searchMatrix(self, matrix, target):
+        """
+        A more concise binary search.
+
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
+        """
+        row = len(matrix)
+        col = len(matrix[0])
+        left, right = 0, row*col-1
+        while left < right:
+            mid = (left+right) // 2
+            mid_row = mid // col
+            mid_col = mid - mid_row*col
+            if matrix[mid_row][mid_col] < target:
+                left = mid + 1                
+            else:
+                right = mid
+
+        if left >= row*col: return False
+        else:   
+            mid_row = left // col
+            mid_col = left - mid_row*col
+            return matrix[mid_row][mid_col] == target
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
