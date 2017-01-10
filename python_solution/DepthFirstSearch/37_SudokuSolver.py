@@ -102,7 +102,6 @@ class Solution(object):
             # print('used_num:', used_num)
 
             for nums in itertools.permutations(left_num):
-                # print('nums: ', nums)
 
                 flag = True
                 for i in range(len(new_nodes)):
@@ -125,7 +124,8 @@ class Solution(object):
 class Solution2(object):
     def solveSudoku(self, board):
         """
-        One DFS implement.
+        One DFS implement. The idea worth attention is how judge a
+        value is valid in row, col and panel position.
 
         :type board: List[List[str]]
         :rtype: void Do not return anything, modify board in-place instead.
@@ -167,7 +167,6 @@ class Solution2(object):
                     
             else:
                 return dfs(index+1)
-
 
         dfs(0)
 
