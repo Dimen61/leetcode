@@ -38,3 +38,29 @@
     15. 145
 
 **Total: 25**
+
+### Result
+
+Finish this mession.
+Rate: **S**
+
+## No. 2 Battle
+
+* Time: From Jan. 27th to Jan. 30th
+
+### My Mession
+
+* Tree(11):
+  1. 208
+  2. 211
+  3. 226
+  4. 235
+  5. 236
+  6. 297
+  7. 331
+  8. 94
+  9. 95
+  10. 96
+  11. 99
+
+**Total: 11**
