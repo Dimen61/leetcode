@@ -64,3 +64,29 @@ Rate: **S**
   11. 99
 
 **Total: 11**
+
+### Result
+
+Not finish this mession. Actually don't solve the problems at all. Because I have to do more laboratory work before winter vacation.
+Rate: **D**
+
+## No.3 Battle
+
+* Time: From Feb. 20th to Mar. 6th
+
+### My Mession
+
+* * Tree(11):
+  1. 208
+  2. 211
+  3. 226
+  4. 235
+  5. 236
+  6. 297
+  7. 331
+  8. 94
+  9. 95
+  10. 96
+  11. 99
+
+**Total: 11**
