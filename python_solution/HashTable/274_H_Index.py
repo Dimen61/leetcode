@@ -22,4 +22,15 @@ class Solution2(object):
         length = len(citations)
         num = [0] * (length+1)
 
-        
+        for citation in citations:
+            if citation > length:
+                num[length] += 1
+            else:
+                num[citation] += 1
+
+        total = 0
+        for i in range(length, -1, -1):
+            total += num[i]
+            if total >= i:
+                return i
+        return 0
